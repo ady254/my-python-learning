@@ -18,4 +18,7 @@ print(thislist)
 # Output:
 # ['apple', 'banana', 'mango']
 
+# Allow Duplicates 
+thislist = ["apple", "banana", "cherry", "apple", "cherry"]
+print(thislist)
 
