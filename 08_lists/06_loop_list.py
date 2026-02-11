@@ -4,6 +4,7 @@ Date: 10-02-2026
 Concept Covered:
 - for loop
 - while loop
+- List Comprehension
 """
 # for loop: 
 # Use for when:
@@ -72,3 +73,32 @@ while i < len(thislist):
 # apple
 # banana
 # cherry
+
+
+# List Comprehension: offers a shorter syntax when you want to create a new list based on the values of an existing list
+
+# Example: based on a list of fruits, you want a new list, containing ony the fruits with the letter "a" in the name
+# without list comprehension you will have to write a "for" statement with a conditional test inside
+# Example: without list comprehension
+
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = []
+
+for x in fruits:
+    if "a" in x:
+        newlist.append(x)
+
+print(newlist)
+
+# output:
+# ['apple', 'banana', 'mango']
+
+# with list comprehension:
+
+fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+newlist = [x for x in fruits if "a" in x]
+
+print(newlist)
+
+# output:
+# ['apple', 'banana', 'mango']
