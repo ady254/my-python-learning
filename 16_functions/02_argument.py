@@ -3,7 +3,18 @@ Topic: Python Function Arguments
 Date: 2026-02-24
 Concept Covered: 
 - function arguments
--
+- Parameters vs Arguments
+- Number of Arguments
+- Default Parameters
+- Keyword Arguments
+- Positional Arguments
+- Mixing Positional and Keyword Arguments
+- Parsing Different Data Types
+- Return Values
+- Returning Different Data Types
+- Positional-Only Arguments
+- Keyword-Only Arguments
+- Combining Positional-Only and Keyword-Only
 """
 
 # Function arguments:
@@ -101,4 +112,117 @@ my_function(animal = "dog", name = "Buddy")
 # Output:
 # I have a dog
 # My animal's name is Buddy
+
+# Positional Arguments:
+# - Positional arguments are arguments that are passed to a function based on their position
+# - Positional arguments must be in the correct order
+
+# Example:
+def my_function(animal, name):
+    print("I have a", animal)
+    print("My", animal + "'s name is", name)
+
+my_function("dog", "Buddy")
+
+# Output:
+# I have a dog
+# My dog's name is Buddy
+
+# Mixing Positional and Keyword Arguments:
+# - You can mix positional and keyword arguments
+
+# Example:
+def my_function(animal, name, age):
+    print("I have a", age, "year old", animal, "named", name)
+
+my_function("dog", name = "Buddy", age = 10)
+
+# Output:
+# I have a 10 year old dog named Buddy
+
+# Parsing Different Data Types:
+# - You can pass different data types to a function
+
+# Example:
+def my_function(fruits):
+    for fruits in fruits:
+        print(fruit)
+
+my_funtion = ["apple", "banana", "cherry"]
+my_function(my_fruits)
+
+# Output:
+# apple
+# banana
+# cherry
+
+# Return Values:
+# - Functions can return values using the return statement:
+
+# Example:
+def my_function(x):
+    return x + y
+
+result = my_function(5, 3)
+print(result)
+
+# Output:
+# 8
+
+# Returning Different Data Types
+# - Functions can return any data type, including lists, tuples, dictionaries, and more.
+
+# Example: A function that returns a list:
+
+def my_function():
+    return ["apple", "banana", "cherry"]
+
+fruits = my_function()
+print(fruits[0])
+print(fruits[1])
+
+# Output:
+# apple
+# banana
+
+# Positional-Only Arguments:
+# - You can specify that a function can have ONLY positional arguments.
+# - To specify positional-only arguments, add , / after the arguments:
+
+# Example:
+def my_function(name, /):
+    print("Hello", name)
+
+my_function("Adnan")
+
+# Output:
+# Hello Adnan
+
+# Keyword-Only Arguments: To specify that a function can have only keyword arguments, add *, before the arguments:
+
+# Example:
+def my_function(*, name):
+  print("Hello", name)
+
+my_function(name = "Ahmad")
+
+# Output:
+# Hello Ahmad
+
+# Combining Positional-Only and Keyword-Only
+# - Arguments before / are positional-only, and arguments after * are keyword-only:
+
+# Example:
+def my_function(a, b, /, *, c, d):
+    return a + b + c + d
+
+result = my_function(5, 10, c = 15, d = 25)
+print(result)
+
+# Output:
+# 55
+
+
+
+
 
