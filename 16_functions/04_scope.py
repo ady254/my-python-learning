@@ -25,3 +25,36 @@ myfunc()
 # Output:
 # 300
 
+# Whatis Global Scope?
+# - A variable created in the main body of the Python code is a global variable and belongs to the global scope.
+
+# Example:
+
+x = 100
+
+def myfunc():
+  print(x)
+
+myfunc()
+
+print(x)
+
+# Output:
+# 100
+# 100
+
+# Global Keyword: The global keyword makes the variable global
+
+# Example:
+#If you use the global keyword, the variable belongs to the global scope:
+
+def myfunc():
+  global x
+  x = 100
+
+myfunc()
+
+print(x)
+
+#Output:
+# 100
