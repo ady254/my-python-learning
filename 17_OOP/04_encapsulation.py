@@ -89,4 +89,4 @@ class Person:
 
 person = Person("John", "123-45-6789")
 # print(person.__ssn)  # ERROR! Can't access directly
-print(person.get_ssn())   # ***-**-6789
+print(person.get_ssn())   # ***
