@@ -21,7 +21,7 @@ print(MyClass)
 # Output: <class '__main__.MyClass'>
 
 # Create Object:
-class MyClass()
+class MyClass:
      x = 5
 
 p1 = MyClass()
@@ -32,7 +32,7 @@ print(p1.x)
 # Delete Object : del keyword to delete objects
 
 # Example:
-Class Person:
+class Person:
   def ___init__(self, name, age):
     self.name = name
     self.age = age
@@ -40,7 +40,7 @@ Class Person:
     def myfunc(self):
       print("Hello my name is " + self.name)
 
-p1 = person("John", 36)
+p1 = p1erson("John", 36)
 
 del p1
 
@@ -57,7 +57,7 @@ class MyClass():
     x = 5
 
 p1 = MyClass()
-p2 = My Class()
+p2 = MyClass()
 p3 = MyClass()
 
 print(p1.x)
@@ -74,3 +74,30 @@ print(p3.x)
 
 
 
+class Laptop:
+   def __init__(self, brand, ram):
+      self.brand = brand
+      self.ram = ram
+
+lap1 = Laptop("Dell", "16GB",)
+lap2 = Laptop("HP", "8GB")
+
+print(lap1.brand, lap1.ram)
+print(lap2.brand, lap2.ram)
+
+class Student:
+   def __init__(self, name, age, branch, college):
+      self.name = name
+      self.age = age
+      self.branch = branch
+
+      def study(self):
+           print(self.name, "is studying")
+      
+
+Student1 = Student("ADNAN", 20, "CSE", "Jamia Hamdard")
+Student1.study()
+
+
+Student2 = Student("AKI", 21, "ECE", "Jamia Hamdard")
+Student2.study()
