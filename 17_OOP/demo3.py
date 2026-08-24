@@ -22,10 +22,14 @@ class Student:
 
 student1 = Student("Adnan", 20)
 student2 = Student("Ahmad", 22, )
-student2.college = "DU" #Instead, you created an instance attribute called college specifically for student2.
+student2.college = "DU"  # changes college on student2 only not on student1 
                         
 student1.study()
 student2.study()
+# Output here is:
+# Adnan is studing in Jamia Hamdard
+# Ahmad is studing in DU
+
 
 
 
