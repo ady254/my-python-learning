@@ -95,3 +95,54 @@ Emp.change_company("ABC technologies")
 emp1.print_emp()
 emp2.print_emp()
 emp3.print_emp()
+
+
+# Static Method : work with the class but does not modify the object's attribute nor the class's attribute 
+
+class Calculator:
+
+    @staticmethod
+    def add(x, y):
+        return x + y
+
+print(Calculator.add(10, 20))
+
+
+#| Type            | First parameter | Works with |
+#| --------------- | --------------- | ---------- |
+#| Instance method | `self`          | Object     |
+#| Class method    | `cls`           | Class      |
+#| Static method   | None            | Neither    |
+
+# How do you decide which one to use?
+# Does this method need data from a specific object?  use self
+# Does this method need to modify/access class-level data?  use cls, class 
+# Does this method need neither object nor class data? use @staticmethod
+ # complete Example:
+class Student:
+
+    college = "Jamia Hamdard"
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    # Instance method
+    def introduce(self):
+        print(self.name, self.age)
+
+    # Class method
+    @classmethod
+    def change_college(cls, new_college):
+        cls.college = new_college
+
+    # Static method
+    @staticmethod
+    def is_adult(age):
+        return age >= 18
+
+
+
+
+# Note:Instance assignment affects one object.
+# Class assignment affects the class, and objects without their own value see the class's value.
