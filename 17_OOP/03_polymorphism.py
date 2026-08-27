@@ -13,73 +13,66 @@ Concept Covered:
 # Method 1: Polymorphism with same interface
 # - Different classes, same method names:
 
-class EmailNotification:
-    def send(self, message):
-        print(f"Sending email: {message}")
+# for example:
+class CreditCard:
+    def pay(self, amount):
+        print("Paid", amount ,"using Credit card")
+class UPI:
+    def pay(self, amount):
+        print("Paid", amount, "using UPI")
 
-class SMSNotification:
-    def send(self, message):
-        print(f"Sending SMS: {message}")
+class PayPal:
+    def pay(self, amount):
+        print("Paid", amount, "using paypal")
 
-class PushNotification:
-    def send(self, message):
-        print(f"Sending Push Notification: {message}")
+payments_process = [
+    CreditCard(),
+    UPI(),
+    PayPal()
 
-# All notifications can be sent the same way!
-def notify_all(notification_systems, message):
-    for system in notification_systems:
-        system.send(message)
-
-# Set up different notification methods
-notifications = [
-    EmailNotification(),
-    SMSNotification(),
-    PushNotification()
 ]
+for payment_process in payments_process:
+    payment_process.pay(1000)
 
-# Send notifications
-notify_all(notifications, "Hello, world!")
+class Duck:
+    def speak(self):
+        print("quck")
 
-# Output:
-# Sending email: Hello, world!
-# Sending SMS: Hello, world!
-# Sending Push Notification: Hello, world! 
+class Dog:
+    def speak(self):
+        print("bark")
 
-# Method 2: Polymorphism with Inheritance
-# Parent class defines the structure, children provide specifics:
-# Parent class
-class Animal:
-    def __init__(self, name):
-        self.name = name
-    
-    def make_sound(self):
-        pass  # Parent just says "do something"
-
-# Child classes
-class Dog(Animal):
-    def make_sound(self):
-        return f"{self.name} says: Woof!"
-
-class Cat(Animal):
-    def make_sound(self):
-        return f"{self.name} says: Meow!"
-
-class Cow(Animal):
-    def make_sound(self):
-        return f"{self.name} says: Moo!"
-
-# All animals have make_sound(), but each is different
-animals = [
-    Dog("Buddy"),
-    Cat("Whiskers"),
-    Cow("Bessie")
-    
+class Cat:
+    def speak(self):
+        print("meow")
+animals =[
+    Duck(),
+    Dog(),
+    Cat()
 ]
-
 for animal in animals:
-    print(animal.make_sound())
-# Output:
-# Buddy says: Woof!
-# Whiskers says: Meow!
-# Bessie says: Moo!
+    animal.speak()
+
+# above all are same method  so python cares: "Does this object have a speak() method that I can call?" Yes , thats a ducking typing
+# for example we have totally different class
+class Duck:
+    def speak(self):
+        print("quck")
+
+class Human:
+    def speak(self):
+        print("hello")
+class Robot:
+    def speak(self):
+        print("beep")
+
+things = [
+    Duck(),
+    Human(),
+    Robot()
+]
+
+for thing in things:
+    thing.speak()
+# in this exmaple python only cares "Does this object have a speak() method that I can call?" which discuss above
 
