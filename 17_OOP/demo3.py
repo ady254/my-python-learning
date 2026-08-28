@@ -9,7 +9,7 @@
 # Example of instance attributes
 
 class Student:
-    college = "Jamia Hamdard"     # Class attribute
+    college = "Jamia Hamdard"    
 
     def __init__(self, name, age,):
         self.name = name

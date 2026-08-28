@@ -10,7 +10,7 @@ Concept Covered:
 # Morphism = forms
 # So polymorphism means "many forms" - the same thing behaving differently in different situations!
 
-# Method 1: Polymorphism with same interface
+# Method 1: Polymorphism with same interface/method call
 # - Different classes, same method names:
 
 # for example:
@@ -76,3 +76,32 @@ for thing in things:
     thing.speak()
 # in this exmaple python only cares "Does this object have a speak() method that I can call?" which discuss above
 
+# Polymorphism through inheritance
+class Payment:
+    def pay(self, amount):
+        print("processing payment")
+
+class CreditCard(Payment):
+
+    def pay(self, amount):
+       
+        print("Paid using credit card")
+
+class UPI(Payment):
+
+    def pay(self, amount):
+        print("Paid using UPI")
+
+payments = [
+    CreditCard(),
+    UPI()
+]
+for payment in payments:
+    payment.pay(1000)
+
+# output: 
+#Paid using credit card
+#Paid using UPI
+
+# each child overrides pay()
+# this is Runtime polymorphism through method overridding
