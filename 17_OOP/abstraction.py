@@ -79,7 +79,7 @@ credit_card = CreditCard()
 upi = UPI()
 # both work here because we use pay() implemented
 # but here's the interesting part
-payment = Payment()
+#payment = Payment()
 #python won't allow it 
 #TypeError: Can't instantiate abstract class Payment -> because Payment contains an abstract method and doesn't provide the actual implementation
 #the child must implement the abstract method
@@ -97,5 +97,41 @@ class CreditCard(Payment):
 
 #That's a very important way to explain abstraction.
 
+# Example for of notifications
+
+from abc import ABC, abstractmethod
+
+class Notification(ABC):
+
+    @abstractmethod
+    def send(self, message):
+        pass
+
+class Email(Notification):
+    def send(self, message):
+        print("Sending email:", message)
+class SMS(Notification):
+    def send(self, message):
+        print("Sending SMS:", message)
+
+class PushNotification(Notification):
+    def send(self, message):
+        print("Sending Push notification:", message)
+
+notifications = [
+    Email(),
+    SMS(),
+    PushNotification()
+
+]
+
+for notification in notifications:
+    notification.send("Hello, Adnan this side")
+
+
+# the above example is the combination of abstraction + polymorphism
+# the above example also states that the application doesn't need to know --> is this email? , is this sms? is this push?
+# it only cares the Notification must have send(), then polymorphism handles the different implementations
+# Abstraction --> defines common contract --> Polymorphism --> different implementations --> these concepts work together
 
 
