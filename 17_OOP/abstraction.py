@@ -182,3 +182,27 @@ dog.speak()
 
 
 
+# One real software example
+
+from abc import ABC, abstractmethod
+
+class LLMProvider(ABC):
+
+    @abstractmethod
+    def generate(self, prompt):
+        pass
+
+class ProviderA(LLMProvider):
+    def generate(self, prompt):
+        pass
+
+class ProviderB(LLMProvider):
+    def generate(self, prompt):
+        pass
+
+
+def ask_model(model, prompt):
+    return provider.generate(prompt)
+
+
+# Abstraction + polymorhism
