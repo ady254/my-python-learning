@@ -135,3 +135,50 @@ for notification in notifications:
 # Abstraction --> defines common contract --> Polymorphism --> different implementations --> these concepts work together
 
 
+
+# Interview bite:
+
+# Can an abstract class have normal methods?
+# ans: Yes!
+# example:
+
+from abc import ABC, abstractmethod
+
+class Payment(ABC):
+    def validate_amount(self, amount):
+        if amount <= 0:
+            return False
+        return True
+
+# here validate_amount() has an implementation
+
+# Abstract classes can also have __init__ --> yes!
+#example
+
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    def __init__(self, name):
+
+        self.name = name
+
+    @abstractmethod
+    def speak(self):
+        pass
+
+#child
+
+class Dog(Animal):
+
+    def speak(self):
+        print(self.name, "braks")
+
+dog = Dog("Bruno")
+dog.speak()
+
+# the flow is:
+# Dog.__init__ inherited --> Animal.__init__() --> self.name = "Bruno" then dog.speak()
+# output: Bruno braks
+
+
+
