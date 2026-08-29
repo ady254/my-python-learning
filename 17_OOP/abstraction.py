@@ -65,4 +65,37 @@ class Payment(ABC):
     def pay(self, amount):
         pass
 # we basically saying --> Every payment type must provide pay() method
+# then create a concrete classes
+
+class CreditCard(Payment):
+    def pay(self, amount):                  # implemented the abstract method into child class
+        print("Paid", amount, "using credit card")
+
+class UPI(Payment):
+    def pay(self, amount):              # implemented the abstract method into child class
+        print("Paid", amount, "using UPI")
+
+credit_card = CreditCard()
+upi = UPI()
+# both work here because we use pay() implemented
+# but here's the interesting part
+payment = Payment()
+#python won't allow it 
+#TypeError: Can't instantiate abstract class Payment -> because Payment contains an abstract method and doesn't provide the actual implementation
+#the child must implement the abstract method
+
+# but 
+class CreditCard(Payment):
+    pass             
+# this will not work because--> child doesn't implement the Payment class method i.e. is pay()
+# The parent defines:
+
+# WHAT must exist
+
+#The child defines:
+#HOW it works
+
+#That's a very important way to explain abstraction.
+
+
 
