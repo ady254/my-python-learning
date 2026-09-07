@@ -22,7 +22,7 @@
 # there is no key value
 # just membership 
 # real world exmaple when u entered in a clg library they only notice your enrollement not ur name coz if we go with name then same students exits which contain dupilcates
-# In python: A set is a collection which is unordered, unchangeable*, and unindexed.
+# In python: A set is a collection which is unordered, unchangeable*, and unindexed and do not allowed duplicates
 
 # Note: Python uses curly brackets {} both sets and dictionaries; dict key-value separated by colon; set contain unique element separated by commas
 # {} creat an empty dictionary for set() for explict make empty coz set comes after dict in python langauge
