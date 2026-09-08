@@ -86,7 +86,7 @@ count = [0] * 26
 # so we convert into tuple --> hashable representation
 # tuple(count)
 
-
+# defaultdict: auto create a key value when missing
 # Optimized solution
 from collections import defaultdict
 
