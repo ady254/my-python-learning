@@ -105,3 +105,49 @@ def group_anagrams(strs):
         groups[key].append(word)
 
     return list(groups.values())
+
+
+# lets breakdown the code:
+  #for char in word:
+            #index = ord(char) - ord('a')
+            #count[index] += 1
+"""
+1.for char in word
+suppose word = "eat"
+char = 'e'
+char = 'a'
+char = 't'
+so char is simply a variable holding the current character
+2. What is ord()?
+ans. ord() is python built-in function -- it converts a character -- its unicode number
+eg: ord('a') -- 97
+ord('b') -- 98
+ord('c') -- 99
+ord('e') -- 101
+so on...
+ord()= character --> number
+chr() = number --> character
+why ord(char) - ord('a')?
+a -> index 0
+b -> index 1
+c -> index 2 .....z -> index 25
+but unicode gives us 
+a = 97, b = 98 ...
+eg: ord('a') - ord('a') --> 97 - 97 = 0
+ord(char) -- ord('e') - ord('a') = 101 - 97 = 4
+index = ord(char) - ord('a') = 4
+count[4] += 1
+index = ord('e') - ord('a')
+      = 101 - 97
+      = 4
+
+count[4] += 1
+index = ord('a') - ord('a')
+      = 0
+
+count[0] += 1
+index = ord('t') - ord('a')
+      = 19
+
+count[19] += 1
+"""
