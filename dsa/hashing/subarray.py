@@ -38,8 +38,9 @@ with a sum of 6. 6 is not in the array,
 therefore 6 is the smallest missing integer greater than or equal to the sum of the longest sequential prefix.
 """
 #code:
+from typing import List
 class Solution:
-    def missingInteger(self, nums: List[int]) -> int:
+    def missingInteger(self, nums: List [int]) -> int:
         prefix_sum = nums[0]
         i = 1
 
@@ -54,3 +55,19 @@ class Solution:
             prefix_sum += 1
 
         return prefix_sum
+# workthrough:
+"""
+nums[i] == nums[i - 1] + 1
+
+nums[i]--> The number at the current position.
+
+nums[i - 1] --> The number directly before it.
+
+nums[i - 1] + 1 --> What the current number should be if the sequence increases by 1.
+
+== --> Compares if the current value matches that expected consecutive value.
+ nums = [1, 2, 3, 2, 5]
+ At i = 1: nums[1] is 2, nums[0] is 1.2 == 1 + 1 True (sequence continues: 1, 2)
+ At i = 2: nums[2] is 3, nums[1] is 2.3 == 2 + 1 True (sequence continues: 1, 2, 3)
+ At i = 3: nums[3] is 2, nums[2] is 3.2 == 3 + 1 False (sequence breaks, loop stops)
+"""
