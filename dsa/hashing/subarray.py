@@ -1,6 +1,7 @@
 """
+Sub array
 Problem Hash map + Prefix sum
-Goal: can prefix sum + hashmap help me find a previous prefix tht gives me the target?
+Goal: can prefix sum + hashmap help me find a previous prefix that gives me the target?
 
 """
 # What is prefix sum in simple word?
@@ -19,3 +20,37 @@ Goal: can prefix sum + hashmap help me find a previous prefix tht gives me the t
 # Why Use It?
 # Save Time: Instead of adding numbers over and over again to find a range sum, you do it once in the beginning
 # Fast Queries: If you want the sum of numbers from index 1 to 3 (2 + 3 + 4 = 9), you just subtract two numbers from your pre-made array (10 - 1 = 9) instead of looping through them
+"""
+================Interview==========why you use prefix and hashmap=========
+We need to find contiguous subarrays with a target sum. 
+Prefix Sum lets us calculate a subarray sum using two prefix sums, 
+and HashMap lets us quickly find how many previous prefix sums can form k with the current prefix.
+
+"""
+#Smallest Missing Integer Greater Than Sequential Prefix Sum
+"""
+Example 1:
+
+Input: nums = [1,2,3,2,5]
+Output: 6
+Explanation: The longest sequential prefix of nums is [1,2,3] 
+with a sum of 6. 6 is not in the array, 
+therefore 6 is the smallest missing integer greater than or equal to the sum of the longest sequential prefix.
+"""
+#code:
+class Solution:
+    def missingInteger(self, nums: List[int]) -> int:
+        prefix_sum = nums[0]
+        i = 1
+
+        while i < len(nums) and nums[i] == nums[i - 1] + 1:
+            prefix_sum += nums[i]
+            i += 1
+# convert nums into set
+        num_set = set(nums)
+
+# find the smallest missing integer >= prefix_sum
+        while prefix_sum in num_set:
+            prefix_sum += 1
+
+        return prefix_sum
