@@ -1,5 +1,5 @@
 """
-Sub array
+Sub array : A subarray is a contiguous part of an array.
 Problem Hash map + Prefix sum
 Goal: can prefix sum + hashmap help me find a previous prefix that gives me the target?
 
