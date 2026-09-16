@@ -95,6 +95,33 @@ prefix sums: 4, 9 , 9, 7, 4, 5
 notice: 4 appears multiply times
 Therefore the subarray between those two prefix sums has a sum divisible by k
 hashmap: {remainder : count}
+ according rule:
+ Rule 1: current_prefix % k == previous_prefix % k:
+ 9 % 5 == 4 % 5
+ 4 == 4
+ Rule 2: current_prefix - previous_prefix % k == 0
+ 9 - 4 % 5 == 0
+ 5 % 5 == 0
+ 0 == 0
+ 
 """
+# Code : 
+def subarraysDivByK(nums, k):
+    remainder_count = {0: 1}
+    prefix = 0
+    count = 0
+
+    for num in nums:
+        prefix += num
+
+        remainder = prefix % k
+
+        if remainder in remainder_count:
+            count += remainder_count[remainder]
+
+        remainder_count[remainder] = remainder_count.get(remainder, 0) + 1
+
+    return count
+
 
 
