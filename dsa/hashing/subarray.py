@@ -71,3 +71,30 @@ nums[i - 1] + 1 --> What the current number should be if the sequence increases 
  At i = 2: nums[2] is 3, nums[1] is 2.3 == 2 + 1 True (sequence continues: 1, 2, 3)
  At i = 3: nums[3] is 2, nums[2] is 3.2 == 3 + 1 False (sequence breaks, loop stops)
 """
+
+"""
+Problem 2 complete solution
+subarray sums divisible by K 
+nums = [4, 5, 0, -2, -3, 1]
+k = 5
+pattern: prefix sum + hashmap
+we're looking for contigous sub arrays
+
+formula: Rule 1 if : current_prefix % k == previous_prefix % k
+         Rule 2 then: (current_prefix - previous_prefix) % k == 0
+
+nums = [4, 5, 0, -2, -3, 1]
+k = 5
+prefix sums: 4, 9 , 9, 7, 4, 5
+4 % 5 = 4
+9 % 5 = 4
+9 % 5 = 4
+7 % 5 = 2
+4 % 5 = 4
+5 % 5 = 0
+notice: 4 appears multiply times
+Therefore the subarray between those two prefix sums has a sum divisible by k
+hashmap: {remainder : count}
+"""
+
+
