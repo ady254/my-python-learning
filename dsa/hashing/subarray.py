@@ -122,6 +122,32 @@ def subarraysDivByK(nums, k):
         remainder_count[remainder] = remainder_count.get(remainder, 0) + 1
 
     return count
+"""
+problem : Make Sum Divisible by P
 
+"""
 
+def minSubarray(nums, p):
+    total_rem = sum(nums) % p
 
+    if total_rem == 0:
+        return 0
+
+    remainder_index = {0: -1}
+    prefix = 0
+    min_length = len(nums)
+
+    for i, num in enumerate(nums):
+        prefix += num
+
+        current_rem = prefix % p
+
+        needed_rem = (current_rem - total_rem) % p
+
+        if needed_rem in remainder_index:
+            length = i - remainder_index[needed_rem]
+            min_length = min(min_length, length)
+
+        remainder_index[current_rem] = i
+
+    return min_length if min_length < len(nums) else -1
