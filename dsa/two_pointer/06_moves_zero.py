@@ -18,3 +18,29 @@ fast pointer: iterate through the array.
 # slow +=
 # array become : [1, 1, 0, 3, 12]
 
+# brute force code
+
+def move_zero(nums):
+    count = 0
+    for i in range(len(nums)):
+        if nums[i] != 0:
+            nums[count] = nums[i]
+            count += 1
+    for i in range(count, len(nums)):
+        nums[i] = 0
+    return nums
+
+print(move_zero([0, 1, 0, 3, 12]))
+
+
+# optimal solution
+
+def move_zero(nums):
+    slow = 0
+    for fast in range(len(nums)):
+        if nums[fast] != 0:
+            nums[slow], nums[fast] = nums[fast], nums[slow]
+            slow += 1
+    return nums
+
+print(move_zero([0, 1, 0, 3, 12]))
