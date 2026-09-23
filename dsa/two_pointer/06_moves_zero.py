@@ -44,3 +44,7 @@ def move_zero(nums):
     return nums
 
 print(move_zero([0, 1, 0, 3, 12]))
+
+
+# Interview byte
+
