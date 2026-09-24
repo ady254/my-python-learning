@@ -56,7 +56,7 @@ class Student:
 # WHY WOULD WE HIDE DATA ?
 # simple example would be
 class BankAccount:
-    def __init__(self):
+    def __init__(self, balance):
         self.balance = balance
 
     def deposit(self, amount):
