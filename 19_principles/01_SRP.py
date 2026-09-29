@@ -30,5 +30,14 @@ class WelcomeEmail:
 # That single person has **three different reasons to change**. If they make a mistake calculating taxes, the kitchen comes to a halt!
 
 
-# 
+# why it matters:
+# 1. It makes it easier to understand the code
+# 2. It makes it easier to maintain the code
+# 3. It makes it easier to test the code
+# 4. It makes it easier to refactor the code
+# 5. It makes it easier to deploy the code
+# 6. It makes it easier to scale the code
+# 7. It makes it easier to debug the code
+# 8. It makes it easier to document the code
+# 9. It makes it easier to reuse the code
    
