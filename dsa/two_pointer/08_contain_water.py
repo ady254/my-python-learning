@@ -51,3 +51,4 @@ def max_area_two_pointer(height):
     return max_water
 
 
+# Interview explanation
